@@ -23,6 +23,7 @@ console.log("JS OK");
 // 1- prendo l'elemento dal dom
 
 const price = document.getElementById("target");
+const yourName = document.getElementById("name");
 const distance = document.getElementById("distance");
 const age = document.getElementById("age");
 const button = document.getElementById("button");
@@ -33,6 +34,10 @@ console.log(price, distance, age, button);
 const priceForKm = 0.21;
 
 button.addEventListener("click", function () {
+  //   2.5- chiedo all'utente il nome e lo salvo nella costante userName
+
+  const userName = yourName.value;
+
   // 3- chiedo all'utente il numero di chilometri che vuole percorrere e lo salvo nella costante userDistance
 
   const userDistance = distance.value;
@@ -41,7 +46,7 @@ button.addEventListener("click", function () {
 
   const userAge = age.value;
 
-  console.log(userDistance, userAge);
+  console.log(userName, userDistance, userAge);
 
   // 5- creo una formula per calcolare il prezzo del biglietto integrale
   const yourPrice = userDistance * priceForKm;
@@ -54,13 +59,15 @@ button.addEventListener("click", function () {
 
   if (userAge < 18) {
     const reducedPrice = (yourPrice - yourPrice * 0.2).toFixed(2);
-    discount = `You have a 20% discount. Your total is: ${reducedPrice}€`;
+    discount = `You have a 20% discount. Your discounted total is: ${reducedPrice}€`;
   }
 
   if (userAge >= 65) {
     const reducedPrice = (yourPrice - yourPrice * 0.4).toFixed(2);
-    discount = `You have a 40% discount. Your total is: ${reducedPrice}€`;
+    discount = `You have a 40% discount. Your discounted total is: ${reducedPrice}€`;
   }
 
   console.log(discount);
+
+  price.innerText = `${userName}, your ticket price is ${yourPrice}€. ${discount}`;
 });
