@@ -4,20 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
+      integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>biglietto treno</title>
   </head>
-  <body>
-    <div>
-      <label for="name">Name</label>
-      <input type="text" id="name" value="Andrea Garofalo" />
-      <label for="distance">distance km</label>
-      <input type="number" id="distance" value="150" />
-      <label for="age">Age</label>
-      <input type="number" id="age" value="28" />
-      <button id="button">Invia</button>
+  <body class="bg-danger p-5">
+    <div class="container">
+      <h1 class="text-light text-center mb-5">Calculate Your Ticket Price</h1>
+      <div class="bg-light rounded-5 my-5 p-5">
+        <div class="form w-100 d-flex justify-content-around">
+          <div class="name-form d-flex flex-column align-items-center">
+            <label for="name" class="text-danger pb-3 fs-5">Name Surname</label>
+            <input
+              type="text"
+              id="name"
+              class="text-center rounded-3"
+              value="Andrea Garofalo"
+            />
+          </div>
+          <div class="distance-form d-flex flex-column align-items-center">
+            <label for="distance" class="text-danger pb-3 fs-5"
+              >Distance Km</label
+            >
+            <input
+              type="number"
+              id="distance"
+              class="text-center rounded-3"
+              value="150"
+            />
+          </div>
+          <div class="age-form d-flex flex-column align-items-center">
+            <label for="age" class="text-danger pb-3 fs-5">Age</label>
+            <input
+              type="number"
+              id="age"
+              class="text-center rounded-3"
+              value="28"
+            />
+          </div>
+        </div>
+        <div class="buttons text-center m-5">
+          <button id="button" type="button">Invia</button>
+          <button type="reset">Reset</button>
+        </div>
+      </div>
+      <div id="target" class="bg-light rounded-5 my-5 p-5"></div>
     </div>
-    <hr />
-    <p id="target"></p>
     <script src="js/script.js"></script>
   </body>
 </html>
